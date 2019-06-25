@@ -1,0 +1,36 @@
+<section class="hero is-bold is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Contact Us!</h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container"> 
+    <!-- contact Form start heare -->
+    <form (ngSubmit)='submitForm()'>
+      <!-- Name -->
+      <div class="field">
+        {{name}}
+        <label class="label">Name</label >
+        <input type="text" name="name" class="input" [(ngModel)]="name">
+      </div>
+      
+      <!-- Email -->
+      <div class="field">
+          <label class="label">Email</label>
+          <input type="email" value="Email" class="input" [(ngModel)]="email">
+      </div>
+      <!--Message-->
+      <div class="field">
+          <label class="label">Your Message</label>
+          <textarea type="textarea" value="textarea" class="textarea" [(ngModel)]="message"></textarea>
+      </div>
+      <!-- Submit buttion -->
+      <button type="submit" class="is-large is-warning button">Send!</button>
+
+    </form>
+  </div>
+<!-- </div> -->
+</section>
