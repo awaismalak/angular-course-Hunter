@@ -9,18 +9,42 @@
 <section class="section">
   <div class="container"> 
     <!-- contact Form start heare -->
-    <form (ngSubmit)='submitForm()'>
+    <form (ngSubmit)='submitForm()' #contactForm="ngForm">
       <!-- Name -->
       <div class="field">
-        {{name}}
+          <!-- {{ nameInput.errors | json }} -->
         <label class="label">Name</label >
-        <input type="text" name="name" class="input" [(ngModel)]="name">
+        <input 
+        type="text"
+        name="name" 
+        class="input"
+        [(ngModel)]="name"
+        #nameInput="ngModel"
+
+        required
+        >
+        <div class=" help is-error" *ngIf="nameInput.invalid  &&  nameInput.touched">
+            Please Fill your name. 
+          </div>
       </div>
       
       <!-- Email -->
       <div class="field">
+          
           <label class="label">Email</label>
-          <input type="email" value="Email" class="input" [(ngModel)]="email">
+          <input 
+          type="text"
+          name="email" 
+          class="input"
+          #emailInput="ngModel"
+         [(ngModel)]="email"
+         required
+          email
+        >
+         <div class=" help is-error" *ngIf="emailInput.invalid &&  nameInput.touched">
+           Please Fill your Email. 
+         </div>
+     
       </div>
       <!--Message-->
       <div class="field">
@@ -28,7 +52,8 @@
           <textarea type="textarea" value="textarea" class="textarea" [(ngModel)]="message"></textarea>
       </div>
       <!-- Submit buttion -->
-      <button type="submit" class="is-large is-warning button">Send!</button>
+      <button type="submit"
+      class="is-large is-warning button" [disabled]="contactForm.invalid">Send!</button>
 
     </form>
   </div>
