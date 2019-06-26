@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/user.service';
 import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/core/services/user.service';
 @Component({
   selector: 'app-single-user',
   templateUrl: './single-user.component.html',
